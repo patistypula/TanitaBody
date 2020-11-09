@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class TanitabodyApplication {
+public class TanitaBodyApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(TanitabodyApplication.class, args);
+        SpringApplication.run(TanitaBodyApplication.class, args);
     }
 
 }

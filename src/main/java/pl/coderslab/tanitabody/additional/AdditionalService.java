@@ -1,7 +1,6 @@
 package pl.coderslab.tanitabody.additional;
 
 import lombok.RequiredArgsConstructor;
-import org.graalvm.compiler.core.common.type.ArithmeticOpTable;
 import org.springframework.stereotype.Service;
 import pl.coderslab.tanitabody.person.Person;
 
