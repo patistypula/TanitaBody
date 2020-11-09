@@ -9,8 +9,24 @@
 <html>
 <head>
     <title>Strona główna</title>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
-<body>
 
+<body background="/images/dietetyka.jpg">
+<h1><center>BAZA PACJENTÓW</center></h1>
+<br>
+<center>
+    <a href="/person/add">
+        <button class="button1">Dodawanie nowego pacjenta</button>
+    </a>
+</center>
+<br>
+<br>
+
+<center>
+    <a href="/person/all">
+        <button class="button1">Lista wszystkich pacjentów</button>
+    </a>
+</center>
 </body>
 </html>

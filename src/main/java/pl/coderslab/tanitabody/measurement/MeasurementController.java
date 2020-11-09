@@ -63,9 +63,9 @@ public class MeasurementController {
     @PostMapping("/edit/{id}")   // tu jest id pomiaru
     public String saveEditedMeasure(@PathVariable long id, @Valid @ModelAttribute ("measurements")
             Measurement measurement, BindingResult result) {
-        if(result.hasErrors()) {
-            return "measurement/form";
-        }
+//        if(result.hasErrors()) {
+//            return "measurement/form";
+//        }
         measurementService.save(measurement);
         return "redirect:/measurement/history/" +measurement.getPerson().getId();
     }
