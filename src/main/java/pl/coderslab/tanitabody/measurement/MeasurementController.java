@@ -10,6 +10,7 @@ import pl.coderslab.tanitabody.person.PersonService;
 
 import javax.validation.Valid;
 import javax.validation.Validator;
+import java.time.LocalDate;
 import java.util.List;
 
 @Controller
@@ -49,6 +50,10 @@ public class MeasurementController {
         if(result.hasErrors()) {
             return "measurement/form";
         }
+        LocalDate now = LocalDate.now();
+        if(measurement.getCreated() == null){
+            measurement.setCreated(now);
+        }
         measurementService.save(measurement);
         return "redirect:/person/all";
     }
@@ -63,9 +68,9 @@ public class MeasurementController {
     @PostMapping("/edit/{id}")   // tu jest id pomiaru
     public String saveEditedMeasure(@PathVariable long id, @Valid @ModelAttribute ("measurements")
             Measurement measurement, BindingResult result) {
-//        if(result.hasErrors()) {
-//            return "measurement/form";
-//        }
+        if(result.hasErrors()) {
+            return "measurement/form";
+        }
         measurementService.save(measurement);
         return "redirect:/measurement/history/" +measurement.getPerson().getId();
     }

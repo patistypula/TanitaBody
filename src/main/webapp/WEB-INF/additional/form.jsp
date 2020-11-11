@@ -36,8 +36,11 @@ LL - Left Leg<br>
     <tr></tr>
     <tr>
         <form:form method="post" modelAttribute="additionals">
+            <form:hidden path="person.id"/>
             <form:hidden path="id"/>
-            <form:hidden path="person"/>
+            Data pomiaru (dd.mm.yyyy): <form:input path="created"/>
+            <br>
+            <br>
             <table border="1" width="50%">
                 <tr>
                     <td></td>

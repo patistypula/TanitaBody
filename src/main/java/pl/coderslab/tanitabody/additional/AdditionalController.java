@@ -10,6 +10,7 @@ import pl.coderslab.tanitabody.person.PersonService;
 
 import javax.validation.Valid;
 import javax.validation.Validator;
+import java.time.LocalDate;
 import java.util.List;
 
 @Controller
@@ -48,6 +49,10 @@ public class AdditionalController {
                                  BindingResult result) {
         if(result.hasErrors()) {
             return "additional/form";
+        }
+        LocalDate now = LocalDate.now();
+        if(additional.getCreated() == null){
+            additional.setCreated(now);
         }
         additionalService.save(additional);
         return "redirect:/person/all";

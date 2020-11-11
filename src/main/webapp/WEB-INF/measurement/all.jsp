@@ -28,18 +28,18 @@
     <tr>
         <table border="1" width="100%">
             <tr>
-                <td>Data</td>
-                <td>Data modyfikacji</td>
-                <td>Procentowa zawartość tkanki tłuszczowej</td>
-                <td>Masa ciała</td>
-                <td>Procentowa zawartość wody w organiźmie</td>
-                <td>Poziom tkanki tłuszczowej wisceralnej</td>
-                <td>Masa mięśniowa</td>
-                <td>Wskaźnik budowy ciała</td>
-                <td>Poziom mineralny kości</td>
-                <td>BMI</td>
-                <td>Wiek metaboliczny</td>
-                <td>Podstawowa przemiana materii</td>
+                <td><center>Data</center></td>
+                <td><center>Data modyfikacji</center></td>
+                <td><center>Procentowa zawartość tkanki tłuszczowej</center></td>
+                <td><center>Masa ciała</center></td>
+                <td><center>Procentowa zawartość wody w organiźmie</center></td>
+                <td><center>Poziom tkanki tłuszczowej wisceralnej</center></td>
+                <td><center>Masa mięśniowa</center></td>
+                <td><center>Wskaźnik budowy ciała</center></td>
+                <td><center>Poziom mineralny kości</center></td>
+                <td><center>BMI</center></td>
+                <td><center>Wiek metaboliczny</center></td>
+                <td><center>Podstawowa przemiana materii</center></td>
                 <td></td>
                 <td></td>
             </tr>
@@ -74,14 +74,18 @@
                     <td><center>${measurement.metabolicAge}</center></td>
                     <td><center>${measurement.basalMetabolicRate}</center></td>
                     <td>
+                        <center>
                         <a href="/measurement/edit/${measurement.id}">
                             <button class="button1">Edytuj</button>
                         </a>
+                        </center>
                     </td>
                     <td>
+                        <center>
                         <a href="/measurement/delete/${measurement.id}">
                             <button class="button1">Usuń</button>
                         </a>
+                        </center>
                     </td>
                 </tr>
             </c:forEach>

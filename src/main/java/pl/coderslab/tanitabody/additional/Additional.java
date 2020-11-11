@@ -2,10 +2,11 @@ package pl.coderslab.tanitabody.additional;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.format.annotation.DateTimeFormat;
 import pl.coderslab.tanitabody.person.Person;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Entity
 @Getter @Setter
@@ -33,12 +34,14 @@ public class Additional {
     private Double bodyMuscle;
 
     @Column(updatable = false)
-    private LocalDateTime created;
-    private LocalDateTime updated;
+    @DateTimeFormat(pattern = "dd.MM.yyyy")
+    private LocalDate created;
+
+    private LocalDate updated;
 
     @PreUpdate
     public void preUpdate(){
-        updated = LocalDateTime.now().withNano(0);
+        updated = LocalDate.now();
     }
 
     @ManyToOne

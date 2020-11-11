@@ -30,8 +30,8 @@
     <tr></tr>
     <tr>
         <form:form method="post" modelAttribute="measurements">
+            <form:hidden path="person.id"></form:hidden>
             <form:hidden path="id"/>
-            <form:hidden path="person"></form:hidden>
             <form:errors path="bodyFatPercentage" cssClass="error"/><br>
             Procentowa zawartość tkanki tłuszczowej: <form:input path="bodyFatPercentage"/> % <br>
 
@@ -62,7 +62,7 @@
             <form:errors path="basalMetabolicRate" cssClass="error"/><br>
             Podstawowa przemiana materii: <form:input path="basalMetabolicRate"/> kcal <br>
             <br>
-            Data pomiaru: <form:input path="created"/><br>
+            Data pomiaru (dd.mm.yyyy): <form:input path="created"/><br>
             <br>
             <button  class="button1">Zapisz</button>
         </form:form>

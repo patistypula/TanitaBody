@@ -44,8 +44,8 @@
     <tr>
         <table border="1" width="100%">
             <tr>
-                <td>Data</td>
-                <td>Data modyfikacji</td>
+                <td><center>Data</center></td>
+                <td><center>Data modyfikacji</center></td>
                 <td><center>RH</center></td>
                 <td><center>RH</center></td>
                 <td><center>LH</center></td>
@@ -77,8 +77,8 @@
             </tr>
             <c:forEach items="${additionals}" var="additional">
                 <tr>
-                    <td>${additional.created}</td>
-                    <td>${additional.updated}</td>
+                    <td><center>${additional.created}</center></td>
+                    <td><center>${additional.updated}</center></td>
                     <td><center>${additional.rightArmFat}</center></td>
                     <td><center>${additional.rightArmMuscle}</center></td>
                     <td><center>${additional.leftArmFat}</center></td>
@@ -90,14 +90,18 @@
                     <td><center>${additional.bodyFat}</center></td>
                     <td><center>${additional.bodyMuscle}</center></td>
                     <td>
+                        <center>
                         <a href="/additional/edit/${additional.id}">
                             <button class="button1">Edytuj</button>
                         </a>
+                        </center>
                     </td>
                     <td>
+                    <center>
                         <a href="/additional/delete/${additional.id}">
                             <button class="button1">Usuń</button>
                         </a>
+                    </center>
                     </td>
                 </tr>
             </c:forEach>
