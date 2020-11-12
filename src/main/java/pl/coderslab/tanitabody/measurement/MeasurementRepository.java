@@ -16,4 +16,6 @@ public interface MeasurementRepository extends JpaRepository<Measurement, Long> 
     List<Measurement> selectByCreated(Person person);
 
     Measurement findById(long id);
+
+    void deleteById(long id);
 }

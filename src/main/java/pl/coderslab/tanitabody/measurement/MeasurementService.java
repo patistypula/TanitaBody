@@ -24,6 +24,10 @@ public class MeasurementService {
     public Measurement findById(long id) {
         return measurementRepository.findById(id);
     }
+
+    public void delete(long id) {
+        measurementRepository.deleteById(id);
+    }
 }
 
 

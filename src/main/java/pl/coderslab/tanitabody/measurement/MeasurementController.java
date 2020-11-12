@@ -74,4 +74,28 @@ public class MeasurementController {
         measurementService.save(measurement);
         return "redirect:/measurement/history/" +measurement.getPerson().getId();
     }
+
+    @GetMapping("/delete/{id}")
+    public String deleteMeasurement (@PathVariable long id, Model model){
+        Measurement measurement = measurementService.findById(id);
+        if (measurement != null) {
+            model.addAttribute("measurements", measurement);
+            return "measurement/confirm";
+        }
+        else {
+            return "redirect:/measurement/history/" +measurement.getPerson().getId();
+        }
+    }
+
+    @PostMapping("/delete")
+    public String delete (@RequestParam long id){
+        Measurement measurement = measurementService.findById(id);
+        if(measurement != null){
+            measurementService.delete(id);
+            return "redirect:/measurement/history/" +measurement.getPerson().getId();
+        }
+        else{
+            return "redirect:/measurement/history/" +measurement.getPerson().getId();
+        }
+    }
 }

@@ -24,4 +24,8 @@ public class AdditionalService {
     public Additional save(Additional additional){
         return additionalRepository.save(additional);
     }
+
+    public void delete(long id) {
+        additionalRepository.deleteById(id);
+    }
 }

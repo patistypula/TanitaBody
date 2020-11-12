@@ -15,4 +15,6 @@ public interface AdditionalRepository extends JpaRepository<Additional, Long> {
     List<Additional> selectByCreated(Person person);
 
     Additional findById(long id);
+
+    void deleteById(long id);
 }

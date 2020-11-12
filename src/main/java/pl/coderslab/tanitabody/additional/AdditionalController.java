@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import pl.coderslab.tanitabody.measurement.Measurement;
 import pl.coderslab.tanitabody.person.Person;
 import pl.coderslab.tanitabody.person.PersonService;
 
@@ -73,5 +74,29 @@ public class AdditionalController {
         }
         additionalService.save(additional);
         return "redirect:/additional/history/" + additional.getPerson().getId();
+    }
+
+    @GetMapping("/delete/{id}")
+    public String deleteMeasurement (@PathVariable long id, Model model){
+        Additional additional = additionalService.findById(id);
+        if (additional != null) {
+            model.addAttribute("additionals", additional);
+            return "additional/confirm";
+        }
+        else {
+            return "redirect:/additional/history/" +additional.getPerson().getId();
+        }
+    }
+
+    @PostMapping("/delete")
+    public String delete (@RequestParam long id){
+        Additional additional = additionalService.findById(id);
+        if(additional != null){
+            additionalService.delete(id);
+            return "redirect:/additional/history/" +additional.getPerson().getId();
+        }
+        else{
+            return "redirect:/additional/history/" +additional.getPerson().getId();
+        }
     }
 }
