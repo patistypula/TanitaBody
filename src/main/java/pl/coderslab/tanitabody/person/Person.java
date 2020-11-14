@@ -36,10 +36,10 @@ public class Person {
     @NotNull
     private LocalDate yearOfBirth;
 
-    @OneToMany (mappedBy = "person")
+    @OneToMany (cascade = CascadeType.REMOVE, mappedBy = "person")
     private List<Measurement> measurement;
 
-    @OneToMany (mappedBy = "person")
+    @OneToMany (cascade = CascadeType.REMOVE,mappedBy = "person")
     private List<Additional> additional;
 
     public Person() {

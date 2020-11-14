@@ -28,4 +28,8 @@ public class PersonService {
         return personRepository.selectByRegex(lastName);
     }
 
+    public void delete(long id) {
+        personRepository.deleteById(id);
+    }
+
 }

@@ -69,4 +69,18 @@ public class PersonController {
         personService.save(person);
         return "redirect:/person/all";
     }
+
+    @GetMapping("/delete/{id}")
+    public String deletePerson(@PathVariable long id, Model model){
+        Person person = personService.selectById(id);
+        model.addAttribute("persons", person);
+            return "person/confirm";
+    }
+
+    @PostMapping("/delete")
+    public String delete (@RequestParam long id){
+        Person person = personService.selectById(id);
+        personService.delete(id);
+        return "redirect:/person/all";
+    }
 }
