@@ -14,16 +14,9 @@ public interface PersonRepository extends JpaRepository<Person, Long> {
 
     @Query(value = "Select p from Person p where p.lastName like %?1%")
     List<Person> selectByRegex(String lastName);
-<<<<<<< HEAD
 
     @Query("SELECT p FROM Person p WHERE p.id=?1")
     Person selectById(long id);
-=======
-    @Query("SELECT p FROM Person p WHERE p.id = ?1")
-    Person selectById(Long id);
-}
-
->>>>>>> a823e87c09286ab58ba26639d27638964c013658
 
     void deleteById(long id);
 }
