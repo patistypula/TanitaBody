@@ -1,6 +1,10 @@
 package pl.coderslab.tanitabody.pdf.test;
 
 import lombok.AllArgsConstructor;
+import org.springframework.core.io.InputStreamResource;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -9,6 +13,8 @@ import pl.coderslab.tanitabody.measurement.MeasurementService;
 import pl.coderslab.tanitabody.person.Person;
 import pl.coderslab.tanitabody.person.PersonService;
 
+import java.io.ByteArrayInputStream;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Controller
@@ -20,13 +26,36 @@ public class PdfCreator {
     @RequestMapping(value = "/creating-measurement-PDF-raport", method = RequestMethod.GET)
     public String filingPdfDocument(@RequestParam long id, Model model){
         Person person = personService.selectById(id);
-        System.out.println("Person: "+person.getFirstName()+" "+person.getLastName());
         List<Measurement> measurements = measurementService.selectByCreated(person);
-        System.out.println("Liczba pomiarów: "+measurements.size());
         model.addAttribute("measurements", measurements);
         model.addAttribute("person", person);
+        model.addAttribute("pdfData", new PdfData());
         return "pdf/PDF-measurement";
     }
+
+    @RequestMapping(value = "/creating-measurement-PDF-raport", params = "createPDF", method = RequestMethod.POST,
+                    produces = MediaType.APPLICATION_PDF_VALUE)
+    public ResponseEntity<InputStreamResource> generetPDFfile(@ModelAttribute("pdfData") PdfData pdfData){
+        System.out.println("Przed dodaniem rozmiar messurments: "+pdfData.getMeasurements().size());
+        if(pdfData.getMeasurements().size()<11) {
+            int sizeList = pdfData.getMeasurements().size();
+            for (int i = 0; i < 11 - sizeList; i++) {
+                pdfData.getMeasurements().add(new Measurement());
+            }
+        }
+        System.out.println("Po modyfikacji rozmiar messurments: "+pdfData.getMeasurements().size());
+        LocalDateTime data = LocalDateTime.now();
+        String fileName = "inline; filename=measurement_"+pdfData.getFirstName()+"_"
+                +pdfData.getLastName()+"_"+data.toString()+".pdf";
+        ByteArrayInputStream pdf = PDF_FileCreator.createByteStream(pdfData);
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Content-Disposition", fileName);
+        return ResponseEntity
+                .ok()
+                .headers(headers)
+                .contentType(MediaType.APPLICATION_PDF)
+                .body(new InputStreamResource(pdf));
+        }
 
     @RequestMapping(value = "/test", method = RequestMethod.GET)
     public String test(){
