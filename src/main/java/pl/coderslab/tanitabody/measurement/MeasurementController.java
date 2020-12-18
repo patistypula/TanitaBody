@@ -11,6 +11,7 @@ import pl.coderslab.tanitabody.person.PersonService;
 import javax.validation.Valid;
 import javax.validation.Validator;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -40,6 +41,10 @@ public class MeasurementController {
         Person person = personService.selectById(id);
         Measurement measurement = new Measurement();
         measurement.setPerson(person);
+        LocalDate now = LocalDate.now();
+        model.addAttribute("sex", person.getGender());
+        model.addAttribute("age", now.getYear()-person.getYearOfBirth().getYear());
+        model.addAttribute("height", person.getHeight());
         model.addAttribute("measurements", measurement);
         return"measurement/form";
     }

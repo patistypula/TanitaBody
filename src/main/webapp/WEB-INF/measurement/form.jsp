@@ -11,11 +11,15 @@
 <head>
     <title>Dodawanie nowego pomiaru</title>
     <link rel="stylesheet" href="/css/style.css">
+    <script src="${pageContext.request.contextPath}/js/range.js"></script>
     <style>
         .error {
             color:red;
         }
     </style>
+    <meta id="sex" class="${sex}">
+    <meta id="age" class="${age}">
+    <meta id="height" class="${height}">
 </head>
 <body>
 <h2><center>DODAWANIE NOWEGO POMIARU</center></h2>
@@ -25,6 +29,7 @@
         <a href="/person/all">
             <button class="button1">Lista wszystkich pacjentów</button>
         </a>
+
         <br>
     </tr>
     <tr></tr>
@@ -33,34 +38,42 @@
             <form:hidden path="person.id"></form:hidden>
             <form:hidden path="id"/>
             <form:errors path="bodyFatPercentage" cssClass="error"/><br>
-            Procentowa zawartość tkanki tłuszczowej: <form:input path="bodyFatPercentage"/> % <br>
+            <label id="row1">Procentowa zawartość tkanki tłuszczowej: <form:input id="bodyFat" path="bodyFatPercentage"/> %
+            <label id="row1p"></label>
+            </label><br>
 
             <form:errors path="bodyWeight" cssClass="error"/><br>
-            Masa ciała: <form:input path="bodyWeight"/> kg <br>
+            <label id="row2">Masa ciała: <form:input id="bodyWeight" path="bodyWeight"/> kg </label><br>
 
             <form:errors path="bodyWaterPercentage" cssClass="error"/><br>
-            Procentowa zawartość wody w organiźmie: <form:input path="bodyWaterPercentage"/> %<br>
+            <label id="row3">Procentowa zawartość wody w organiźmie: <form:input id="bodyWater" path="bodyWaterPercentage"/> % </label><br>
 
             <form:errors path="visceralFat" cssClass="error"/><br>
-            Poziom tkanki tłuszczowej wisceralnej: <form:input path="visceralFat"/> level<br>
+            <label id="row4">Poziom tkanki tłuszczowej wisceralnej: <form:input id="visceralFat" path="visceralFat"/> level</label><br>
 
             <form:errors path="muscleMass" cssClass="error"/><br>
-            Masa mięśniowa: <form:input path="muscleMass"/> kg<br>
+            <label id="row5">Masa mięśniowa: <form:input id="muscleMass" path="muscleMass"/> kg</label><br>
 
             <form:errors path="bodyBuildingIndex" cssClass="error"/><br>
-            Wskaźnik budowy ciała: <form:input path="bodyBuildingIndex"/><br>
+            <label id="row6">Wskaźnik budowy ciała: <form:input id="bodyBuildingIndex" path="bodyBuildingIndex"/>
+                <label id="row6p"></label>
+            </label><br>
 
             <form:errors path="boneMass" cssClass="error"/><br>
-            Poziom mineralny kości: <form:input path="boneMass"/> kg <br>
+            <label id="row7">Poziom mineralny kości: <form:input id="boneMass" path="boneMass"/> kg </label><br>
 
             <form:errors path="BMI" cssClass="error"/><br>
-            BMI: <form:input path="BMI"/><br>
+            <label id="row8">BMI: <form:input id="bmi" path="BMI"/>
+            <label id="row8p"></label>
+            </label><br>
 
             <form:errors path="metabolicAge" cssClass="error"/><br>
-            Wiek metaboliczny: <form:input path="metabolicAge"/> lat/a<br>
+            <label id="row9">Wiek metaboliczny: <form:input id="metabolicAge" path="metabolicAge"/> lat/a</label><br>
 
             <form:errors path="basalMetabolicRate" cssClass="error"/><br>
-            Podstawowa przemiana materii: <form:input path="basalMetabolicRate"/> kcal <br>
+            <label id="row10">Podstawowa przemiana materii:
+                <form:input id="basalMetabolicRate" path="basalMetabolicRate"/> kcal
+            </label><br>
             <br>
             Data pomiaru (dd.mm.yyyy): <form:input path="created"/><br>
             <br>
