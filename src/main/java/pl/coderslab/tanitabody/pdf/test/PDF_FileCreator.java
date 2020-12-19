@@ -12,13 +12,15 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.Month;
 import java.util.Arrays;
 
 public class PDF_FileCreator {
 
 
     public static ByteArrayInputStream createByteStream (PdfData pdfData){
-        String adressFile = "src/main/java/pl/coderslab/tanitabody/pdf/test/test.pdf";
+        //String adressFile = "src/main/java/pl/coderslab/tanitabody/pdf/test/test.pdf";
 
 //        PdfWriter writer = new PdfWriter();
 
@@ -35,16 +37,20 @@ public class PDF_FileCreator {
             pdfDoc.newPage();
             //pdfDoc.newPage();
             Font f1 = new Font(Font.FontFamily.COURIER, 8);
+            LocalDateTime data = LocalDateTime.now();
+            int year = data.getYear();
+            int day  = data.getDayOfMonth();
+            int monthValue = data.getMonthValue();
+            String dataString = day+"."+monthValue+"."+year;
+            String  patient = pdfData.getFirstName()+" "+pdfData.getLastName();
+            System.out.println(patient);
             Paragraph paragraph1 = new Paragraph();
             Anchor dietician = new Anchor();
-            Anchor patient   = new Anchor();
             dietician.setFont(f1);
-            dietician.add("d.soroczynskadietetyk@gmail.com");
+            dietician.add("Utworzono: "+dataString+"     Pacjent: "+patient+"     d.soroczynskadietetyk@gmail.com");
             dietician.setReference("mailto:\"+email+\"?subject=ReferenceNumber:1234");
             paragraph1.add(dietician);
             paragraph1.setAlignment(Element.ALIGN_RIGHT);
-            patient.setFont(f1);
-            patient.add(pdfData.getFirstName()+" "+pdfData.getLastName());
             Paragraph paragraph2 = new Paragraph();
             float[] columnsWidths = new float[13];
             Arrays.fill(columnsWidths, 500f);
