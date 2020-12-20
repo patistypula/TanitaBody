@@ -32,13 +32,13 @@
             <th>
                 Procentowa zawartość <br>
                 tkanki tłuszczowej <br>
-                w organizmie
+                w organiźmie
             </th>
             <th>
                 Masa ciała
             </th>
             <th>
-                Procentowa zawartość <br>wody w organizmie
+                Procentowa zawartość <br>wody w organiźmie
             </th>
             <th>
                 Poziom tłuszczu <br>wisceralnego
@@ -141,7 +141,7 @@
             </td>
         </tr>
         </table>
-        <p id="countArea">Zaznazono:
+        <p id="countArea">Zaznaczono:
             <label id="count">0</label>
             pomiarów</p>
         <table>

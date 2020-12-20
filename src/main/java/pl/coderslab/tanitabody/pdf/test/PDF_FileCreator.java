@@ -112,7 +112,7 @@ public class PDF_FileCreator {
             }
             //row4
             table.addCell(createImageCell("src/main/resources/static/pdf/images/body_fat_percentage.jpg"));
-            table.addCell(createTextCell("Procentowa zawartość tkanki tłuszczowej  w organizmie", 6));
+            table.addCell(createTextCell("Procentowa zawartość tkanki tłuszczowej  w organiźmie", 6));
             for (int i = 0; i < 11; i++) {
                 PdfPCell cell = new PdfPCell();
                 Double value = pdfData.getMeasurements().get(i).getBodyFatPercentage();
@@ -154,7 +154,7 @@ public class PDF_FileCreator {
             }
             //row6
             table.addCell(createImageCell("src/main/resources/static/pdf/images/body_water_percentage.jpg"));
-            table.addCell(createTextCell("Procentowa zawartość wody w organizmie", 6));
+            table.addCell(createTextCell("Procentowa zawartość wody w organiźmie", 6));
             for (int i = 0; i < 11; i++) {
                 PdfPCell cell = new PdfPCell();
                 Double value = pdfData.getMeasurements().get(i).getBodyWaterPercentage();
