@@ -66,7 +66,5 @@ public class PdfCreator {
 
         String adress = "redirect:/creating-measurement-PDF-raport?id="+id;
         return adress;
-//        model.addAttribute("adress", adress);
-//        return "test2";
     }
 }
