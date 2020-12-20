@@ -36,17 +36,16 @@ public class PdfCreator {
     @RequestMapping(value = "/creating-measurement-PDF-raport", params = "createPDF", method = RequestMethod.POST,
                     produces = MediaType.APPLICATION_PDF_VALUE)
     public ResponseEntity<InputStreamResource> generetPDFfile(@ModelAttribute("pdfData") PdfData pdfData){
-        System.out.println("Przed dodaniem rozmiar messurments: "+pdfData.getMeasurements().size());
         if(pdfData.getMeasurements().size()<11) {
             int sizeList = pdfData.getMeasurements().size();
             for (int i = 0; i < 11 - sizeList; i++) {
                 pdfData.getMeasurements().add(new Measurement());
             }
         }
-        System.out.println("Po modyfikacji rozmiar messurments: "+pdfData.getMeasurements().size());
+        //System.out.println("Pacjent: "+pdfData.getFirstName()+" "+pdfData.getLastName());
         LocalDateTime data = LocalDateTime.now();
         String fileName = "inline; filename=measurement_"+pdfData.getFirstName()+"_"
-                +pdfData.getLastName()+"_"+data.toString()+".pdf";
+                +pdfData.getLastName()+".pdf";
         ByteArrayInputStream pdf = PDF_FileCreator.createByteStream(pdfData);
         HttpHeaders headers = new HttpHeaders();
         headers.add("Content-Disposition", fileName);
