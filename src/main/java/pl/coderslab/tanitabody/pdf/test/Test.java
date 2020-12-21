@@ -1,135 +1,18 @@
 package pl.coderslab.tanitabody.pdf.test;
 
-import com.itextpdf.layout.element.Cell;
 import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.*;
 import lombok.SneakyThrows;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
-import java.util.stream.DoubleStream;
-import java.util.stream.IntStream;
 
 public class Test {
 
-//    @SneakyThrows
-//    public static void main(String[] args) {
-//        String adressFile = "src/main/java/pl/coderslab/tanitabody/pdf/test/test.pdf";
-//
-////        PdfWriter writer = new PdfWriter();
-//
-//        PdfDocument pdf = new PdfDocument();
-//        pdf.addTitle("Tabela pomiarów");
-//        Document pdfDoc = new Document();
-//        PdfWriter.getInstance(pdfDoc, new FileOutputStream(adressFile));
-//        pdfDoc.open();
-//        pdfDoc.setPageSize(PageSize.A4.rotate());
-//        pdfDoc.newPage();
-//        Paragraph paragraph1 = new Paragraph();
-//        Anchor anchor = new Anchor("d.soroczynskadietetyk@gmail.com");
-//        anchor.setReference("mailto:\"+email+\"?subject=ReferenceNumber:1234");
-//        paragraph1.add(anchor);
-//        paragraph1.setAlignment(Element.ALIGN_RIGHT);
-//        Paragraph paragraph2 = new Paragraph();
-//        float [] columnsWidths = new float[13];
-//        Arrays.fill(columnsWidths, 500f);
-//        columnsWidths[0] = 400;
-//        PdfPTable table = new PdfPTable(13);
-//        table.setWidthPercentage(100);
-//        table.setWidths(columnsWidths);
-//        table.setSpacingBefore(10);
-//        PdfPCell cell = new PdfPCell();
-//        //row1
-//        //List<PdfPCell> row1 = new ArrayList<>();
-//        for(int i=0;   i<13;   i++){
-//            if(i>=2){
-//                cell.setPhrase(new Phrase("Data/ Wyniki"));
-//            }
-//            table.addCell(cell);
-//        }
-//        //row2
-//        //List<PdfPCell> row2 = new ArrayList<>();
-//        cell.setPhrase(new Phrase(" "));
-//        cell.setRowspan(2);
-//        table.addCell(cell);
-//        for(int i=0;   i<12;   i++){
-////            if(i==0){
-////                cell.setRowspan(2);
-////            }
-//            table.addCell(" ");
-//        }
-//        //row3
-//        for(int i=0;   i<12;   i++){
-//            table.addCell(" ");
-//        }
-//        //row4
-//        table.addCell(createImageCell("src/main/resources/static/pdf/images/body_fat_percentage.jpg"));
-//        table.addCell(createTextCell("Procentowa zawartość tkanki tłuszczowej  w organizmie", 9));
-//        for(int i=0;   i<11;   i++){
-//            table.addCell(" ");
-//        }
-//        //row5
-//        table.addCell(createImageCell("src/main/resources/static/pdf/images/body_weight.jpg"));
-//        table.addCell(createTextCell("Masa ciała",9));
-//        for(int i=0;   i<11;   i++){
-//            table.addCell(" ");
-//        }
-//        //row6
-//        table.addCell(createImageCell("src/main/resources/static/pdf/images/body_water_percentage.jpg"));
-//        table.addCell(createTextCell("Procentowa zawartość wody w organizmie",9));
-//        for(int i=0;   i<11;   i++){
-//            table.addCell(" ");
-//        }
-//        //row7
-//        table.addCell(createImageCell("src/main/resources/static/pdf/images/vicera_fat_rating.jpg"));
-//        table.addCell(createTextCell("Poziom tłuszczu wisceralnego",9));
-//        for(int i=0;   i<11;   i++){
-//            table.addCell(" ");
-//        }
-//        //row8
-//        table.addCell(createImageCell("src/main/resources/static/pdf/images/muscle_mass.jpg"));
-//        table.addCell(createTextCell("Masa mięśniowa",9));
-//        for(int i=0;   i<11;   i++){
-//            table.addCell(" ");
-//        }
-//        //row8
-//        table.addCell(createImageCell("src/main/resources/static/pdf/images/physique_rating.jpg"));
-//        table.addCell(createTextCell("Wskaźnik budowy ciała",9));
-//        for(int i=0;   i<11;   i++){
-//            table.addCell(" ");
-//        }
-//        //row9
-//        table.addCell(createImageCell("src/main/resources/static/pdf/images/bone_mass_ranges.jpg"));
-//        table.addCell(createTextCell("Poziom mineralny kości (wapnia i innych minerałów)",9));
-//        for(int i=0;   i<11;   i++){
-//            table.addCell(" ");
-//        }
-//        //row10
-//        table.addCell(createImageCell("src/main/resources/static/pdf/images/bmi.jpg"));
-//        table.addCell(createTextCell("BMI\n" +
-//                "Wiek  metaboliczny \n" +
-//                "PPM",9));
-//        for(int i=0;   i<11;   i++){
-//            table.addCell(" ");
-//        }
-//
-//        paragraph2.add(table);
-//        pdfDoc.add(paragraph1);
-//        pdfDoc.add(paragraph2);
-//        pdfDoc.add(Image.getInstance("src/main/resources/static/pdf/images/explanations.jpg"));
-//        pdfDoc.close();
-//    }
-
     public static ByteArrayInputStream createByteStream (){
         String adressFile = "src/main/java/pl/coderslab/tanitabody/pdf/test/test.pdf";
-
-//        PdfWriter writer = new PdfWriter();
-
         PdfDocument pdf = new PdfDocument();
         pdf.addTitle("Tabela pomiarów");
         Document pdfDoc = new Document();
@@ -167,9 +50,6 @@ public class Test {
             cell.setRowspan(2);
             table.addCell(cell);
             for (int i = 0; i < 12; i++) {
-//            if(i==0){
-//                cell.setRowspan(2);
-//            }
                 table.addCell(" ");
             }
             //row3
@@ -277,12 +157,9 @@ public class Test {
     }
 
     public static PdfPCell createTextCell(String text, int  fontSize){
-        //PdfPCell cellText = new PdfPCell();
         Font font = new Font(Font.FontFamily.COURIER, fontSize, Font.ITALIC);
         PdfPCell cellText = new PdfPCell(new Phrase(text, font));
         return cellText;
     }
-
-
 }
 

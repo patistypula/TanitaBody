@@ -11,7 +11,6 @@ import pl.coderslab.tanitabody.person.PersonService;
 import javax.validation.Valid;
 import javax.validation.Validator;
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -33,6 +32,7 @@ public class MeasurementController {
         Measurement measurement = new Measurement();
         measurement.getPerson();
         model.addAttribute("measurements", measurementService.selectByCreated(person));
+        model.addAttribute("person", person);
         return "measurement/all";
     }
 

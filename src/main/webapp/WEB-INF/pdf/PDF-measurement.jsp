@@ -69,28 +69,28 @@
         <tr>
 
             <th>
-                <img src="pdf/images/body_fat_percentage.jpg" border="0"></img>
+                <img src="/pdf/images/body_fat_percentage.jpg" border="0"></img>
             </th>
             <th>
-                <img src="pdf/images/body_weight.jpg" border="0"></img>
+                <img src="/pdf/images/body_weight.jpg" border="0"></img>
             </th>
             <th>
-                <img src="pdf/images/body_water_percentage.jpg" border="0"></img>
+                <img src="/pdf/images/body_water_percentage.jpg" border="0"></img>
             </th>
             <th>
-                <img src="pdf/images/vicera_fat_rating.jpg" border="0"></img>
+                <img src="/pdf/images/vicera_fat_rating.jpg" border="0"></img>
             </th>
             <th>
-                <img src="pdf/images/muscle_mass.jpg" border="0"></img>
+                <img src="/pdf/images/muscle_mass.jpg" border="0"></img>
             </th>
             <th>
-                <img src="pdf/images/physique_rating.jpg" border="0"></img>
+                <img src="/pdf/images/physique_rating.jpg" border="0"></img>
             </th>
             <th>
-                <img src="pdf/images/bone_mass_ranges.jpg" border="0"></img>
+                <img src="/pdf/images/bone_mass_ranges.jpg" border="0"></img>
             </th>
             <th>
-                <img src="pdf/images/bmi.jpg" border="0"></img>
+                <img src="/pdf/images/bmi.jpg" border="0"></img>
             </th>
         </tr>
         <c:forEach items="${measurements}" var="measurement">

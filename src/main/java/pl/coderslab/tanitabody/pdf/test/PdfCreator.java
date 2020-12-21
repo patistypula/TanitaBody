@@ -23,8 +23,8 @@ public class PdfCreator {
     private final MeasurementService measurementService;
     private final PersonService      personService;
 
-    @RequestMapping(value = "/creating-measurement-PDF-raport", method = RequestMethod.GET)
-    public String filingPdfDocument(@RequestParam long id, Model model){
+    @RequestMapping(value = "/creating-measurement-PDF-raport/{id}", method = RequestMethod.GET)
+    public String filingPdfDocument(@PathVariable long id, Model model){
         Person person = personService.selectById(id);
         List<Measurement> measurements = measurementService.selectByCreated(person);
         model.addAttribute("measurements", measurements);
@@ -33,16 +33,16 @@ public class PdfCreator {
         return "pdf/PDF-measurement";
     }
 
-    @RequestMapping(value = "/creating-measurement-PDF-raport", params = "createPDF", method = RequestMethod.POST,
+    @RequestMapping(value = "/creating-measurement-PDF-raport/{id}", params = "createPDF", method = RequestMethod.POST,
                     produces = MediaType.APPLICATION_PDF_VALUE)
-    public ResponseEntity<InputStreamResource> generetPDFfile(@ModelAttribute("pdfData") PdfData pdfData){
+    public ResponseEntity<InputStreamResource> generetPDFfile(@ModelAttribute("pdfData") PdfData pdfData,
+                                                              @PathVariable long id){
         if(pdfData.getMeasurements().size()<11) {
             int sizeList = pdfData.getMeasurements().size();
             for (int i = 0; i < 11 - sizeList; i++) {
                 pdfData.getMeasurements().add(new Measurement());
             }
         }
-        //System.out.println("Pacjent: "+pdfData.getFirstName()+" "+pdfData.getLastName());
         LocalDateTime data = LocalDateTime.now();
         String fileName = "inline; filename=measurement_"+pdfData.getFirstName()+"_"
                 +pdfData.getLastName()+".pdf";

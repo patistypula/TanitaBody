@@ -25,7 +25,7 @@
         <br>
     </tr>
     <tr>
-            <a href="/person/all">
+            <a href="/creating-measurement-PDF-raport/${person.id}">
                 <button class="button1">Generuj PDF</button>
             </a>
             <br>

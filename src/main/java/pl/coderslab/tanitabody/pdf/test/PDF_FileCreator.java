@@ -1,10 +1,7 @@
 package pl.coderslab.tanitabody.pdf.test;
 
 import com.itextpdf.text.*;
-import com.itextpdf.text.pdf.PdfDocument;
-import com.itextpdf.text.pdf.PdfPCell;
-import com.itextpdf.text.pdf.PdfPTable;
-import com.itextpdf.text.pdf.PdfWriter;
+import com.itextpdf.text.pdf.*;
 import lombok.SneakyThrows;
 
 import java.io.ByteArrayInputStream;
@@ -20,8 +17,6 @@ public class PDF_FileCreator {
     public static ByteArrayInputStream createByteStream (PdfData pdfData){
         //String adressFile = "src/main/java/pl/coderslab/tanitabody/pdf/test/test.pdf";
 
-//        PdfWriter writer = new PdfWriter();
-
         PdfDocument pdf = new PdfDocument();
         pdf.addTitle("Tabela pomiarów");
         Document pdfDoc = new Document();
@@ -35,6 +30,9 @@ public class PDF_FileCreator {
             pdfDoc.newPage();
             //pdfDoc.newPage();
             Font f1 = new Font(Font.FontFamily.COURIER, 8);
+            BaseFont pl = BaseFont.createFont("c:/windows/fonts/arial.ttf",
+                    BaseFont.CP1250, BaseFont.EMBEDDED);
+            Font pl1 = new Font(pl, 8);
             LocalDateTime data = LocalDateTime.now();
             int year = data.getYear();
             int day  = data.getDayOfMonth();
@@ -44,7 +42,7 @@ public class PDF_FileCreator {
             System.out.println(patient);
             Paragraph paragraph1 = new Paragraph();
             Anchor dietician = new Anchor();
-            dietician.setFont(f1);
+            dietician.setFont(pl1);
             dietician.add("Utworzono: "+dataString+"     Pacjent: "+patient+"     d.soroczynskadietetyk@gmail.com");
             dietician.setReference("mailto:\"+email+\"?subject=ReferenceNumber:1234");
             paragraph1.add(dietician);
@@ -55,7 +53,6 @@ public class PDF_FileCreator {
             columnsWidths[0] = 400;
             PdfPTable table = new PdfPTable(13);
             table.setWidthPercentage(100);
-            //table.setHorizontalAlignment(Element.ALIGN_CENTER);
             table.setWidths(columnsWidths);
             table.setSpacingBefore(10);
             Font f = new Font(Font.FontFamily.TIMES_ROMAN, 7);
@@ -284,19 +281,19 @@ public class PDF_FileCreator {
             }
 
             paragraph2.add(table);
-            //pdfDoc.setMargins(36, 36, 18, 18);
             pdfDoc.add(paragraph1);
             pdfDoc.add(paragraph2);
             try {
                 Image image = Image.getInstance("src/main/resources/static/pdf/images/explanations.jpg");
                 image.scaleToFit(1200,150);
                 pdfDoc.add(image);
-                //pdfDoc.add(Image.getInstance("src/main/resources/static/pdf/images/explanations.jpg"));
             } catch (IOException e) {
                 e.printStackTrace();
             }
             pdfDoc.close();
         } catch (DocumentException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return new ByteArrayInputStream(out.toByteArray());
@@ -337,12 +334,9 @@ public class PDF_FileCreator {
     }
 
     public static PdfPCell createTextCell(String text, int  fontSize){
-        //PdfPCell cellText = new PdfPCell();
         Font font = new Font(Font.FontFamily.COURIER, fontSize, Font.ITALIC);
         PdfPCell cellText = new PdfPCell(new Phrase(text, font));
         return cellText;
     }
-
-
 }
 
