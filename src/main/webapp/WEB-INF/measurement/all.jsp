@@ -24,6 +24,14 @@
         <br>
         <br>
     </tr>
+    <tr>
+            <a href="/person/all">
+                <button class="button1">Generuj PDF</button>
+            </a>
+            <br>
+            <br>
+        </tr>
+
     <tr></tr>
     <tr>
         <table border="1" width="100%">

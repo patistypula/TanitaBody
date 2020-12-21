@@ -11,8 +11,10 @@ document.addEventListener("DOMContentLoaded", function () {
     var row2 = document.getElementById("row2");
     var bodyWater = document.getElementById("bodyWater");
     var row3 = document.getElementById("row3");
+    var row3p = document.getElementById("row3p");
     var visceralFat = document.getElementById("visceralFat");
     var row4 = document.getElementById("row4");
+    var row4p = document.getElementById("row4p");
 
     var bodyBuildingIndex = document.getElementById("bodyBuildingIndex");
     var row6 = document.getElementById("row6p");
@@ -170,16 +172,20 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log("F");
             if(bodyWater.value>=45 && bodyWater.value<=60){
                 row3.style.color = "green";
+                row3p.innerText = "HEALTHY";
             } else{
                 row3.style.color = "#ff0000";
+                row3p.innerText = "NOT HEALTHY";
             }
         }
         else{
             console.log("M");
             if(bodyWater.value>=50 && bodyWater.value<=65){
                 row3.style.color = "green";
+                row3p.innerText = "HEALTHY";
             } else{
                 row3.style.color = "#ff0000";
+                row3p.innerText = "NOT HEALTHY";
             }
         }
     }
@@ -187,38 +193,40 @@ document.addEventListener("DOMContentLoaded", function () {
     function visceralFatRange(){
         if(visceralFat.value>=1 && visceralFat.value<=12){
             row4.style.color = "green";
+            row4p.innerText = "HEALTHY LEVEL";
         } else{
             row4.style.color = "#ff0000";
+            row4p.innerText = "EXCESS LEVEL";
         }
     }
 
     function bodyBuildingIndexRange(){
         if(bodyBuildingIndex.value==1){
-            row6.innerText = "Hidden obese";
+            row6.innerText = "HIDDEN OBESE";
             row6.style.color = "#ff0000";
         } else if(bodyBuildingIndex.value==2){
-            row6.innerText = "Obese";
+            row6.innerText = "OBESE";
             row6.style.color = "#ff0000";
         } else if(bodyBuildingIndex.value==3){
-            row6.innerText = "Solidly-built";
+            row6.innerText = "SOLIDLY-BUILT";
             row6.style.color = "green";
         } else if(bodyBuildingIndex.value==4){
-            row6.innerText = "Under exercised";
+            row6.innerText = "UNDER EXERCISED";
             row6.style.color = "green";
         } else if(bodyBuildingIndex.value==5){
-            row6.innerText = "Standard";
+            row6.innerText = "STANDARD";
             row6.style.color = "green";
         } else if(bodyBuildingIndex.value==6){
-           row6.innerText = "Standard Muscular";
+           row6.innerText = "STANDARD MUSCULAR";
            row6.style.color = "green";
         } else if(bodyBuildingIndex.value==7){
-           row6.innerText = "Thin";
+           row6.innerText = "THIN";
            row6.style.color = "green";
         } else if(bodyBuildingIndex.value==8){
-           row6.innerText = "Thin and muscular";
+           row6.innerText = "THIN AND MUSCULAR";
            row6.style.color = "green";
         } else if(bodyBuildingIndex.value==9){
-           row6.innerText = "Very Muscular";
+           row6.innerText = "VERY MUSCULAR";
            row6.style.color = "green";
         }
     }
@@ -228,40 +236,52 @@ document.addEventListener("DOMContentLoaded", function () {
             if(bodyWeight.value<50 && bodyWeight.value>0){
                 if(boneMass.value>=1.95){
                     row7.style.color = "green";
+                    row7.innerText = "HEALTHY";
                 } else{
                     row7.style.color = "#ff0000";
+                    row7.innerText = "NOT HEALTHY";
                 }
             } else if(bodyWeight.value>=50 && bodyWeight.value<75){
                 if(boneMass.value>=2.40){
                     row7.style.color = "green";
+                    row7.innerText = "HEALTHY";
                 } else{
                     row7.style.color = "#ff0000";
+                    row7.innerText = "NOT HEALTHY";
                 }
             } else if(bodyWeight.value>=75){
                 if(boneMass.value>=2.95){
                     row7.style.color = "green";
+                    row7.innerText = "HEALTHY";
                 } else{
                     row7.style.color = "#ff0000";
+                    row7.innerText = "NOT HEALTHY";
                 }
             }
         } else{
             if(bodyWeight.value<65 && bodyWeight.value>0){
                 if(boneMass.value>=2.65){
                     row7.style.color = "green";
+                    row7.innerText = "HEALTHY";
                 } else{
                     row7.style.color = "#ff0000";
+                    row7.innerText = "NOT HEALTHY";
                 }
             } else if(bodyWeight.value>=65 && bodyWeight.value<95){
                 if(boneMass.value>=3.29){
                     row7.style.color = "green";
+                    row7.innerText = "HEALTHY";
                 } else{
                     row7.style.color = "#ff0000";
+                    row7.innerText = "NOT HEALTHY";
                 }
             } else if(bodyWeight.value>=95){
                 if(boneMass.value>=3.69){
                     row7.style.color = "green";
+                    row7.innerText = "HEALTHY";
                 } else{
                     row7.style.color = "#ff0000";
+                    row7.innerText = "NOT HEALTHY";
                 }
             }
         }

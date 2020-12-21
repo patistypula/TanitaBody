@@ -15,6 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Generowanie PDFa</title>
+    <link rel="stylesheet" href="/css/style.css">
     <script src="${pageContext.request.contextPath}/js/index.js"></script>
 </head>
 <body>
@@ -146,8 +147,8 @@
             pomiarów</p>
         <table>
             <tr>
-                <td class="create"><button type="submit" name="createPDF">Generuj PDF</button></td>
-                <td><button type="submit" name="cancel">Anuluj</button></td>
+                <td class="create"><button class="button1" name="createPDF">Generuj PDF</button></td>
+                <td><button class="button1" name="cancel">Anuluj</button></td>
             </tr>
         </table>
 </form:form>
