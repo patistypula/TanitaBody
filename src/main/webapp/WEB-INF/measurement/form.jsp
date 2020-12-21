@@ -46,21 +46,27 @@
             <label id="row2">Masa ciała: <form:input id="bodyWeight" path="bodyWeight"/> kg </label><br>
 
             <form:errors path="bodyWaterPercentage" cssClass="error"/><br>
-            <label id="row3">Procentowa zawartość wody w organiźmie: <form:input id="bodyWater" path="bodyWaterPercentage"/> % </label><br>
+            <label id="row3">Procentowa zawartość wody w organiźmie: <form:input id="bodyWater" path="bodyWaterPercentage"/> %
+            <label id="row3p"></label>
+            </label><br>
 
             <form:errors path="visceralFat" cssClass="error"/><br>
-            <label id="row4">Poziom tkanki tłuszczowej wisceralnej: <form:input id="visceralFat" path="visceralFat"/> level</label><br>
+            <label id="row4">Poziom tkanki tłuszczowej wisceralnej: <form:input id="visceralFat" path="visceralFat"/> level
+            <label id="row4p"></label>
+            </label><br>
 
             <form:errors path="muscleMass" cssClass="error"/><br>
             <label id="row5">Masa mięśniowa: <form:input id="muscleMass" path="muscleMass"/> kg</label><br>
 
             <form:errors path="bodyBuildingIndex" cssClass="error"/><br>
             <label id="row6">Wskaźnik budowy ciała: <form:input id="bodyBuildingIndex" path="bodyBuildingIndex"/>
-                <label id="row6p"></label>
+            <label id="row6p"></label>
             </label><br>
 
             <form:errors path="boneMass" cssClass="error"/><br>
-            <label id="row7">Poziom mineralny kości: <form:input id="boneMass" path="boneMass"/> kg </label><br>
+            <label id="row7">Poziom mineralny kości: <form:input id="boneMass" path="boneMass"/> kg
+            <label id="row7p"></label>
+            </label><br>
 
             <form:errors path="BMI" cssClass="error"/><br>
             <label id="row8">BMI: <form:input id="bmi" path="BMI"/>

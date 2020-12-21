@@ -17,10 +17,12 @@ document.addEventListener("DOMContentLoaded", function () {
     var row4p = document.getElementById("row4p");
 
     var bodyBuildingIndex = document.getElementById("bodyBuildingIndex");
-    var row6 = document.getElementById("row6p");
+    var row6 = document.getElementById("row6");
+    var row6p = document.getElementById("row6p");
 
     var boneMass = document.getElementById("boneMass");
     var row7 = document.getElementById("row7");
+    var row7p = document.getElementById("row7p");
     
     var bmi   = document.getElementById("bmi");
     var row8  = document.getElementById("row8");
@@ -202,31 +204,31 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function bodyBuildingIndexRange(){
         if(bodyBuildingIndex.value==1){
-            row6.innerText = "HIDDEN OBESE";
+            row6p.innerText = "HIDDEN OBESE";
             row6.style.color = "#ff0000";
         } else if(bodyBuildingIndex.value==2){
-            row6.innerText = "OBESE";
+            row6p.innerText = "OBESE";
             row6.style.color = "#ff0000";
         } else if(bodyBuildingIndex.value==3){
-            row6.innerText = "SOLIDLY-BUILT";
+            row6p.innerText = "SOLIDLY-BUILT";
             row6.style.color = "green";
         } else if(bodyBuildingIndex.value==4){
-            row6.innerText = "UNDER EXERCISED";
+            row6p.innerText = "UNDER EXERCISED";
             row6.style.color = "green";
         } else if(bodyBuildingIndex.value==5){
-            row6.innerText = "STANDARD";
+            row6p.innerText = "STANDARD";
             row6.style.color = "green";
         } else if(bodyBuildingIndex.value==6){
-           row6.innerText = "STANDARD MUSCULAR";
+           row6p.innerText = "STANDARD MUSCULAR";
            row6.style.color = "green";
         } else if(bodyBuildingIndex.value==7){
-           row6.innerText = "THIN";
+           row6p.innerText = "THIN";
            row6.style.color = "green";
         } else if(bodyBuildingIndex.value==8){
-           row6.innerText = "THIN AND MUSCULAR";
+           row6p.innerText = "THIN AND MUSCULAR";
            row6.style.color = "green";
         } else if(bodyBuildingIndex.value==9){
-           row6.innerText = "VERY MUSCULAR";
+           row6p.innerText = "VERY MUSCULAR";
            row6.style.color = "green";
         }
     }
@@ -236,52 +238,52 @@ document.addEventListener("DOMContentLoaded", function () {
             if(bodyWeight.value<50 && bodyWeight.value>0){
                 if(boneMass.value>=1.95){
                     row7.style.color = "green";
-                    row7.innerText = "HEALTHY";
+                    row7p.innerText = "HEALTHY";
                 } else{
                     row7.style.color = "#ff0000";
-                    row7.innerText = "NOT HEALTHY";
+                    row7p.innerText = "NOT HEALTHY";
                 }
             } else if(bodyWeight.value>=50 && bodyWeight.value<75){
                 if(boneMass.value>=2.40){
                     row7.style.color = "green";
-                    row7.innerText = "HEALTHY";
+                    row7p.innerText = "HEALTHY";
                 } else{
                     row7.style.color = "#ff0000";
-                    row7.innerText = "NOT HEALTHY";
+                    row7p.innerText = "NOT HEALTHY";
                 }
             } else if(bodyWeight.value>=75){
                 if(boneMass.value>=2.95){
                     row7.style.color = "green";
-                    row7.innerText = "HEALTHY";
+                    row7p.innerText = "HEALTHY";
                 } else{
                     row7.style.color = "#ff0000";
-                    row7.innerText = "NOT HEALTHY";
+                    row7p.innerText = "NOT HEALTHY";
                 }
             }
         } else{
             if(bodyWeight.value<65 && bodyWeight.value>0){
                 if(boneMass.value>=2.65){
                     row7.style.color = "green";
-                    row7.innerText = "HEALTHY";
+                    row7p.innerText = "HEALTHY";
                 } else{
                     row7.style.color = "#ff0000";
-                    row7.innerText = "NOT HEALTHY";
+                    row7p.innerText = "NOT HEALTHY";
                 }
             } else if(bodyWeight.value>=65 && bodyWeight.value<95){
                 if(boneMass.value>=3.29){
                     row7.style.color = "green";
-                    row7.innerText = "HEALTHY";
+                    row7p.innerText = "HEALTHY";
                 } else{
                     row7.style.color = "#ff0000";
-                    row7.innerText = "NOT HEALTHY";
+                    row7p.innerText = "NOT HEALTHY";
                 }
             } else if(bodyWeight.value>=95){
                 if(boneMass.value>=3.69){
                     row7.style.color = "green";
-                    row7.innerText = "HEALTHY";
+                    row7p.innerText = "HEALTHY";
                 } else{
                     row7.style.color = "#ff0000";
-                    row7.innerText = "NOT HEALTHY";
+                    row7p.innerText = "NOT HEALTHY";
                 }
             }
         }
