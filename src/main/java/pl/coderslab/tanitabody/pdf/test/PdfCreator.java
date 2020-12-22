@@ -56,6 +56,13 @@ public class PdfCreator {
                 .body(new InputStreamResource(pdf));
         }
 
+    @RequestMapping(value = "/creating-measurement-PDF-raport/{id}", params = "cancel", method = RequestMethod.POST)
+    public String cancelCreatePDF(@PathVariable long id){
+        String adress = "redirect:/measurement/history/"+id;
+        return adress;
+    }
+
+
     @RequestMapping(value = "/test", method = RequestMethod.GET)
     public String test(){
         return "test";

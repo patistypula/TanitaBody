@@ -20,7 +20,7 @@
 </head>
 <body>
 <h3>Lista pomiarów użytkownika: ${person.firstName} ${person.lastName}</h3>
-<h4>Zaznacz, które pomiary mają być dodane do pliku pdf (maksynalnie 11 pomiarów):</h4>
+<h4>Zaznacz, które pomiary mają być dodane do pliku pdf (maksymalnie 11 pomiarów):</h4>
 <form:form modelAttribute="pdfData" method="post">
     <form:hidden path="firstName" value="${person.firstName}"/>
     <form:hidden path="lastName" value="${person.lastName}"/>
@@ -148,7 +148,9 @@
         <table>
             <tr>
                 <td class="create"><button class="button1" name="createPDF">Generuj PDF</button></td>
-                <td><button class="button1" name="cancel">Anuluj</button></td>
+                <td>
+                    <button class="button1" name="cancel">Anuluj</button>
+                </td>
             </tr>
         </table>
 </form:form>
