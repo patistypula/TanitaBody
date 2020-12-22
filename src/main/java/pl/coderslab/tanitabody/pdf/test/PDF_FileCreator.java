@@ -3,6 +3,7 @@ package pl.coderslab.tanitabody.pdf.test;
 import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.*;
 import lombok.SneakyThrows;
+import org.springframework.security.core.parameters.P;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -56,6 +57,7 @@ public class PDF_FileCreator {
             table.setWidths(columnsWidths);
             table.setSpacingBefore(10);
             Font f = new Font(Font.FontFamily.TIMES_ROMAN, 7);
+            Font ff = new Font(pl, 6);
             //row1
             //List<PdfPCell> row1 = new ArrayList<>();
             for (int i = 0; i < 13; i++) {
@@ -107,7 +109,10 @@ public class PDF_FileCreator {
             }
             //row4
             table.addCell(createImageCell("src/main/resources/static/pdf/images/body_fat_percentage.jpg"));
-            table.addCell(createTextCell("Procentowa zawartość tkanki tłuszczowej  w organiźmie", 6));
+            PdfPCell bodyFatPercentageCell = new PdfPCell();
+            bodyFatPercentageCell.setPhrase(new Phrase("Procentowa zawartość tkanki tłuszczowej w organiźmie", ff));
+            bodyFatPercentageCell.setVerticalAlignment(Element.ALIGN_MIDDLE);
+            table.addCell(bodyFatPercentageCell);
             for (int i = 0; i < 11; i++) {
                 PdfPCell cell = new PdfPCell();
                 Double value = pdfData.getMeasurements().get(i).getBodyFatPercentage();
@@ -128,7 +133,10 @@ public class PDF_FileCreator {
             }
             //row5
             table.addCell(createImageCell("src/main/resources/static/pdf/images/body_weight.jpg"));
-            table.addCell(createTextCell("Masa ciała", 6));
+            PdfPCell bodyWeightCell = new PdfPCell();
+            bodyWeightCell.setPhrase(new Phrase("Masa ciała", ff));
+            bodyWeightCell.setVerticalAlignment(Element.ALIGN_MIDDLE);
+            table.addCell(bodyWeightCell);
             for (int i = 0; i < 11; i++) {
                 PdfPCell cell = new PdfPCell();
                 Double value = pdfData.getMeasurements().get(i).getBodyWeight();
@@ -149,7 +157,10 @@ public class PDF_FileCreator {
             }
             //row6
             table.addCell(createImageCell("src/main/resources/static/pdf/images/body_water_percentage.jpg"));
-            table.addCell(createTextCell("Procentowa zawartość wody w organiźmie", 6));
+            PdfPCell bodyWaterPercentageCell = new PdfPCell();
+            bodyWaterPercentageCell.setPhrase(new Phrase("Procentowa zawartość wody w organiźmie", ff));
+            bodyWaterPercentageCell.setVerticalAlignment(Element.ALIGN_MIDDLE);
+            table.addCell(bodyWaterPercentageCell);
             for (int i = 0; i < 11; i++) {
                 PdfPCell cell = new PdfPCell();
                 Double value = pdfData.getMeasurements().get(i).getBodyWaterPercentage();
@@ -170,7 +181,10 @@ public class PDF_FileCreator {
             }
             //row7
             table.addCell(createImageCell("src/main/resources/static/pdf/images/vicera_fat_rating.jpg"));
-            table.addCell(createTextCell("Poziom tłuszczu wisceralnego", 6));
+            PdfPCell visceralFatCell = new PdfPCell();
+            visceralFatCell.setPhrase(new Phrase("Poziom tłuszczu wisceralnego", ff));
+            visceralFatCell.setVerticalAlignment(Element.ALIGN_MIDDLE);
+            table.addCell(visceralFatCell);
             for (int i = 0; i < 11; i++) {
                 PdfPCell cell = new PdfPCell();
                 Double value = pdfData.getMeasurements().get(i).getVisceralFat();
@@ -191,7 +205,10 @@ public class PDF_FileCreator {
             }
             //row8
             table.addCell(createImageCell("src/main/resources/static/pdf/images/muscle_mass.jpg"));
-            table.addCell(createTextCell("Masa mięśniowa", 6));
+            PdfPCell muscleMassCell = new PdfPCell();
+            muscleMassCell.setPhrase(new Phrase("Masa mięśniowa", ff));
+            muscleMassCell.setVerticalAlignment(Element.ALIGN_MIDDLE);
+            table.addCell(muscleMassCell);
             for (int i = 0; i < 11; i++) {
                 PdfPCell cell = new PdfPCell();
                 Double value = pdfData.getMeasurements().get(i).getMuscleMass();
@@ -212,7 +229,10 @@ public class PDF_FileCreator {
             }
             //row8
             table.addCell(createImageCell("src/main/resources/static/pdf/images/physique_rating.jpg"));
-            table.addCell(createTextCell("Wskaźnik budowy ciała", 6));
+            PdfPCell bodyBuildingIndex = new PdfPCell();
+            bodyBuildingIndex.setPhrase(new Phrase("Wskaźnik budowy ciała", ff));
+            bodyBuildingIndex.setVerticalAlignment(Element.ALIGN_MIDDLE);
+            table.addCell(bodyBuildingIndex);
             for (int i = 0; i < 11; i++) {
                 PdfPCell cell = new PdfPCell();
                 Integer value = pdfData.getMeasurements().get(i).getBodyBuildingIndex();
@@ -230,7 +250,10 @@ public class PDF_FileCreator {
             }
             //row9
             table.addCell(createImageCell("src/main/resources/static/pdf/images/bone_mass_ranges.jpg"));
-            table.addCell(createTextCell("Poziom mineralny kości (wapnia i innych minerałów)", 6));
+            PdfPCell boneMassCell = new PdfPCell();
+            boneMassCell.setPhrase(new Phrase("Poziom mineralny kości (wapnia i innych minerałów)", ff));
+            boneMassCell.setVerticalAlignment(Element.ALIGN_MIDDLE);
+            table.addCell(boneMassCell);
             for (int i = 0; i < 11; i++) {
                 PdfPCell cell = new PdfPCell();
                 Double value = pdfData.getMeasurements().get(i).getBoneMass();
@@ -251,9 +274,13 @@ public class PDF_FileCreator {
             }
             //row10
             table.addCell(createImageCell("src/main/resources/static/pdf/images/bmi.jpg"));
-            table.addCell(createTextCell("BMI\n" +
+            PdfPCell cellBMI = new PdfPCell();
+            cellBMI.setPhrase(new Phrase("BMI\n" +
                     "Wiek  metaboliczny \n" +
-                    "PPM", 6));
+                    "PPM", ff));
+            cellBMI.setVerticalAlignment(Element.ALIGN_MIDDLE);
+            //cellBMI.setHorizontalAlignment(Element.ALIGN_CENTER);
+            table.addCell(cellBMI);
             for (int i = 0; i < 11; i++) {
                 PdfPCell cell = new PdfPCell();
                 Double value = pdfData.getMeasurements().get(i).getBMI();
@@ -271,6 +298,13 @@ public class PDF_FileCreator {
                     text += "\n";
                     text += String.valueOf(value2);
                 }
+                Integer value3 = pdfData.getMeasurements().get(i).getBasalMetabolicRate();
+                if(value3 == null){
+                    //text += "\n";
+                }else{
+                    text += "\n";
+                    text += String.valueOf(value3);
+                }
                 Phrase p = new Phrase();
                 p.setFont(f1);
                 p.add(text);
@@ -286,6 +320,7 @@ public class PDF_FileCreator {
             try {
                 Image image = Image.getInstance("src/main/resources/static/pdf/images/explanations.jpg");
                 image.scaleToFit(1200,150);
+                image.setAlignment(Element.ALIGN_CENTER);
                 pdfDoc.add(image);
             } catch (IOException e) {
                 e.printStackTrace();
