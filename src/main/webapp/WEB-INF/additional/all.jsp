@@ -23,6 +23,13 @@
         <br>
         <br>
     </tr>
+    <tr>
+                <a href="/creating-additional-measurement-PDF-raport/${person.id}">
+                    <button class="button1">Generuj PDF</button>
+                </a>
+                <br>
+                <br>
+            </tr>
     <tr></tr>
     <tr>
         RH - Right Hand

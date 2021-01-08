@@ -28,5 +28,21 @@
         <button class="button1">Lista wszystkich pacjentów</button>
     </a>
 </center>
+<br>
+<br>
+
+<center>
+    <a href="/dump/export">
+        <button class="button1">Stwórz buckup bazy danych</button>
+    </a>
+</center>
+<br>
+<br>
+
+<center>
+    <a href="/dump/import">
+        <button class="button1">Wczytaj bazę danych z pliku</button>
+    </a>
+</center>
 </body>
 </html>

@@ -33,6 +33,7 @@ public class AdditionalController {
         Additional additional = new Additional();
         additional.getPerson();
         model.addAttribute("additionals", additionalService.selectByCreated(person));
+        model.addAttribute("person", person);
         return "additional/all";
     }
 

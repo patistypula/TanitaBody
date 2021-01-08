@@ -1,0 +1,4 @@
+mysqldump:___C:\Program Files\MySQL\MySQL Server 8.0\bin\mysqldump.exe
+mysql:___C:\Program Files\MySQL\MySQL Server 8.0\bin\mysql.exe
+saveDatabase:___D:\buckup
+fileDatbase:___tanitaDatabase

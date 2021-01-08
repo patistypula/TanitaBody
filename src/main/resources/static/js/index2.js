@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    console.log("test");
     var maxLength = 11;
     var counter = 0;
     var text = document.getElementById("count");

@@ -1,0 +1,1 @@
+C:\Program Files\MySQL\MySQL Server 8.0\bin\mysql.exe  --host=localhost --port=3306 --user=root --password=coderslab < D:\buckuptanitaDatabase_08-01-2021.sql
