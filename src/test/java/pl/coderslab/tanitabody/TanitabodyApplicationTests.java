@@ -1,4 +1,4 @@
-package pl.coderslab.tanitabody;
+package pl.soroczynskadietetyk.tanitabody;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
