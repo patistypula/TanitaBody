@@ -35,6 +35,13 @@
 </div>
 
 <table>
+<tr>
+        <a href="/home">
+            <button class="button1">Powrót do strony głównej</button>
+        </a>
+        <br>
+        <br>
+    </tr>
     <tr>
         <a href="/person/all">
             <button class="button1">Lista wszystkich pacjentów</button>
