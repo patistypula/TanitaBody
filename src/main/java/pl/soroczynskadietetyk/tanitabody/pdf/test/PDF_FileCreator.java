@@ -107,7 +107,7 @@ public class PDF_FileCreator {
                 table.addCell(cell);
             }
             //row4
-            table.addCell(createImageCell("src/main/resources/static/pdf/images/body_fat_percentage.jpg"));
+            table.addCell(createImageCell("data/body_fat_percentage.jpg"));
             PdfPCell bodyFatPercentageCell = new PdfPCell();
             bodyFatPercentageCell.setPhrase(new Phrase("Procentowa zawartość tkanki tłuszczowej w organiźmie", ff));
             bodyFatPercentageCell.setVerticalAlignment(Element.ALIGN_MIDDLE);
@@ -131,7 +131,7 @@ public class PDF_FileCreator {
                 table.addCell(cell);
             }
             //row5
-            table.addCell(createImageCell("src/main/resources/static/pdf/images/body_weight.jpg"));
+            table.addCell(createImageCell("data/body_weight.jpg"));
             PdfPCell bodyWeightCell = new PdfPCell();
             bodyWeightCell.setPhrase(new Phrase("Masa ciała", ff));
             bodyWeightCell.setVerticalAlignment(Element.ALIGN_MIDDLE);
@@ -155,7 +155,7 @@ public class PDF_FileCreator {
                 table.addCell(cell);
             }
             //row6
-            table.addCell(createImageCell("src/main/resources/static/pdf/images/body_water_percentage.jpg"));
+            table.addCell(createImageCell("data/body_water_percentage.jpg"));
             PdfPCell bodyWaterPercentageCell = new PdfPCell();
             bodyWaterPercentageCell.setPhrase(new Phrase("Procentowa zawartość wody w organiźmie", ff));
             bodyWaterPercentageCell.setVerticalAlignment(Element.ALIGN_MIDDLE);
@@ -179,7 +179,7 @@ public class PDF_FileCreator {
                 table.addCell(cell);
             }
             //row7
-            table.addCell(createImageCell("src/main/resources/static/pdf/images/vicera_fat_rating.jpg"));
+            table.addCell(createImageCell("data/vicera_fat_rating.jpg"));
             PdfPCell visceralFatCell = new PdfPCell();
             visceralFatCell.setPhrase(new Phrase("Poziom tłuszczu wisceralnego", ff));
             visceralFatCell.setVerticalAlignment(Element.ALIGN_MIDDLE);
@@ -203,7 +203,7 @@ public class PDF_FileCreator {
                 table.addCell(cell);
             }
             //row8
-            table.addCell(createImageCell("src/main/resources/static/pdf/images/muscle_mass.jpg"));
+            table.addCell(createImageCell("data/muscle_mass.jpg"));
             PdfPCell muscleMassCell = new PdfPCell();
             muscleMassCell.setPhrase(new Phrase("Masa mięśniowa", ff));
             muscleMassCell.setVerticalAlignment(Element.ALIGN_MIDDLE);
@@ -227,7 +227,7 @@ public class PDF_FileCreator {
                 table.addCell(cell);
             }
             //row8
-            table.addCell(createImageCell("src/main/resources/static/pdf/images/physique_rating.jpg"));
+            table.addCell(createImageCell("data/physique_rating.jpg"));
             PdfPCell bodyBuildingIndex = new PdfPCell();
             bodyBuildingIndex.setPhrase(new Phrase("Wskaźnik budowy ciała", ff));
             bodyBuildingIndex.setVerticalAlignment(Element.ALIGN_MIDDLE);
@@ -248,7 +248,7 @@ public class PDF_FileCreator {
                 table.addCell(cell);
             }
             //row9
-            table.addCell(createImageCell("src/main/resources/static/pdf/images/bone_mass_ranges.jpg"));
+            table.addCell(createImageCell("data/bone_mass_ranges.jpg"));
             PdfPCell boneMassCell = new PdfPCell();
             boneMassCell.setPhrase(new Phrase("Poziom mineralny kości (wapnia i innych minerałów)", ff));
             boneMassCell.setVerticalAlignment(Element.ALIGN_MIDDLE);
@@ -272,7 +272,7 @@ public class PDF_FileCreator {
                 table.addCell(cell);
             }
             //row10
-            table.addCell(createImageCell("src/main/resources/static/pdf/images/bmi.jpg"));
+            table.addCell(createImageCell("data/bmi.jpg"));
             PdfPCell cellBMI = new PdfPCell();
             cellBMI.setPhrase(new Phrase("BMI\n" +
                     "Wiek  metaboliczny \n" +
@@ -317,7 +317,7 @@ public class PDF_FileCreator {
             pdfDoc.add(paragraph1);
             pdfDoc.add(paragraph2);
             try {
-                Image image = Image.getInstance("src/main/resources/static/pdf/images/explanations.jpg");
+                Image image = Image.getInstance("data/explanations.jpg");
                 image.scaleToFit(1200,150);
                 image.setAlignment(Element.ALIGN_CENTER);
                 pdfDoc.add(image);

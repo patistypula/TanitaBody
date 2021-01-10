@@ -107,7 +107,7 @@ public class PDF_Additional_FileCreator {
                 table.addCell(cell);
             }
             //row4
-            table.addCell(createImageCell("src/main/resources/static/pdf/images/right_hand.jpg"));
+            table.addCell(createImageCell("data/right_hand.jpg"));
             PdfPCell right_hand_fat = new PdfPCell();
             right_hand_fat.setPhrase(new Phrase("Prawa ręka\n" +
                     "[fat %]", ff));
@@ -132,7 +132,7 @@ public class PDF_Additional_FileCreator {
                 table.addCell(cell);
             }
             //row5
-            table.addCell(createImageCell("src/main/resources/static/pdf/images/right_hand.jpg"));
+            table.addCell(createImageCell("data/right_hand.jpg"));
             PdfPCell right_hand_mus = new PdfPCell();
             right_hand_mus.setPhrase(new Phrase("Prawa ręka\n"+
                             "[kg]", ff));
@@ -157,7 +157,7 @@ public class PDF_Additional_FileCreator {
                 table.addCell(cell);
             }
             //row6
-            table.addCell(createImageCell("src/main/resources/static/pdf/images/left_hand.jpg"));
+            table.addCell(createImageCell("data/left_hand.jpg"));
             PdfPCell left_hand_fat = new PdfPCell();
             left_hand_fat.setPhrase(new Phrase("Lewa ręka\n"+
                             "[fat %]", ff));
@@ -182,7 +182,7 @@ public class PDF_Additional_FileCreator {
                 table.addCell(cell);
             }
             //row7
-            table.addCell(createImageCell("src/main/resources/static/pdf/images/left_hand.jpg"));
+            table.addCell(createImageCell("data/left_hand.jpg"));
             PdfPCell left_hand_mus = new PdfPCell();
             left_hand_mus.setPhrase(new Phrase("Lewa ręka\n"+
                             "[kg]", ff));
@@ -207,7 +207,7 @@ public class PDF_Additional_FileCreator {
                 table.addCell(cell);
             }
             //row8
-            table.addCell(createImageCell("src/main/resources/static/pdf/images/right_leg.jpg"));
+            table.addCell(createImageCell("data/right_leg.jpg"));
             PdfPCell right_leg_fat = new PdfPCell();
             right_leg_fat.setPhrase(new Phrase("Prawa noga\n"+
                             "[fat %]", ff));
@@ -232,7 +232,7 @@ public class PDF_Additional_FileCreator {
                 table.addCell(cell);
             }
             //row8
-            table.addCell(createImageCell("src/main/resources/static/pdf/images/right_leg.jpg"));
+            table.addCell(createImageCell("data/right_leg.jpg"));
             PdfPCell right_leg_mus = new PdfPCell();
             right_leg_mus.setPhrase(new Phrase("Prawa noga\n"+
                             "[kg]", ff));
@@ -254,7 +254,7 @@ public class PDF_Additional_FileCreator {
                 table.addCell(cell);
             }
             //row9
-            table.addCell(createImageCell("src/main/resources/static/pdf/images/left_leg.jpg"));
+            table.addCell(createImageCell("data/left_leg.jpg"));
             PdfPCell left_leg_fat = new PdfPCell();
             left_leg_fat.setPhrase(new Phrase("Lewa noga\n"+
                             "[fat %]", ff));
@@ -279,7 +279,7 @@ public class PDF_Additional_FileCreator {
                 table.addCell(cell);
             }
             //row10
-            table.addCell(createImageCell("src/main/resources/static/pdf/images/left_leg.jpg"));
+            table.addCell(createImageCell("data/left_leg.jpg"));
             PdfPCell left_leg_mus = new PdfPCell();
             left_leg_mus.setPhrase(new Phrase("Lew noga\n" +
                     "[kg]", ff));
@@ -304,7 +304,7 @@ public class PDF_Additional_FileCreator {
                 table.addCell(cell);
             }
             //row11
-            table.addCell(createImageCell("src/main/resources/static/pdf/images/body.jpg"));
+            table.addCell(createImageCell("data/body.jpg"));
             PdfPCell cellBodyFat = new PdfPCell();
             cellBodyFat.setPhrase(new Phrase("Body\n" +
                     "[fat %]", ff));
@@ -329,7 +329,7 @@ public class PDF_Additional_FileCreator {
                 table.addCell(cell);
             }
             //row12
-            table.addCell(createImageCell("src/main/resources/static/pdf/images/body.jpg"));
+            table.addCell(createImageCell("data/body.jpg"));
             PdfPCell cellBodyMus = new PdfPCell();
             cellBodyMus.setPhrase(new Phrase("Body\n" +
                     "[kg]", ff));

@@ -33,7 +33,7 @@
 
 <center>
     <a href="/dump/export">
-        <button class="button1">Stwórz buckup bazy danych</button>
+        <button class="button1">Stwórz backup bazy danych</button>
     </a>
 </center>
 <br>

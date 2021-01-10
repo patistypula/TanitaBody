@@ -134,7 +134,8 @@ public class DumpController {
 }
 
     private static String [] data(){
-        File file = new File("D:\\coderslab\\tanitabody\\TanitaBody\\src\\main\\resources\\static\\data\\tanitabody.dat");
+        File file = new File("data/tanitabody.dat");
+        //File file = new File("D:\\coderslab\\tanitabody\\TanitaBody\\src\\main\\resources\\static\\data\\tanitabody.dat");
         StringBuilder builder = new StringBuilder();
         String [] data = new String [4];
         try{
@@ -143,6 +144,7 @@ public class DumpController {
             while(scan.hasNextLine()){
                 String [] line = scan.nextLine().split("___");
                 data[count] = line[1].trim();
+                System.out.println("linia "+count+" : "+data[count]);
                 count++;
             }
         } catch (FileNotFoundException e) {
