@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-<h2><center>Wybierz który buckup ma zostać wczytany:</center></h2>
+<h2><center>Wybierz backup, który ma zostać wczytany:</center></h2>
 
 <table>
     <tr>

@@ -98,7 +98,6 @@ public class PdfCreator {
                 pdfData.getMeasurements().add(new Additional());
             }
         }
-        //LocalDateTime data = LocalDateTime.now();
         String fileName = "inline; filename=measurement_"+pdfData.getFirstName()+"_"
                 +pdfData.getLastName()+".pdf";
         ByteArrayInputStream pdf = PDF_Additional_FileCreator.createByteStream(pdfData);
