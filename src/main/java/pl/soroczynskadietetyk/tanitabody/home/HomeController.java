@@ -25,5 +25,4 @@ public class HomeController {
     public String logOut(){
         return "home/logout";
     }
-
 }

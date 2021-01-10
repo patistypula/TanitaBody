@@ -52,7 +52,7 @@ public class DumpController {
         model.addAttribute("fileName", fileName);
         return "dump/selectDB";
     }
-    //@ResponseBody
+
     @RequestMapping(value = "/import", method = RequestMethod.POST)
     public String loadDBFile(@RequestParam String path,
                            @RequestParam String fileName,
@@ -73,18 +73,10 @@ public class DumpController {
         return "dump/import";
     }
 
-
-
-
-
     private static boolean createDatabaseFile(String mysqldump, String folderPath, String fileName){
         Date backupDate = new Date();
         SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
         String backupDateStr = format.format(backupDate);
-        //String dbNameList = "tanita_body";
-
-        //String fileName = "Daily_DB_Backup"; // default file name
-        //String folderPath = "d:\\coderslab";
         File f1 = new File(folderPath);
         f1.mkdir(); // create folder if not exist
 
@@ -108,7 +100,6 @@ public class DumpController {
         }
 
         if (processComplete == 0) {
-            //System.out.println("Backup Complete at " + new Date());
             return true;
         } else {
             return false;
@@ -116,7 +107,6 @@ public class DumpController {
     }
 
     public static boolean restoreDB(String source, String mysql) {
-        //String[] executeCmd = new String[]{mysql, "--user=" + dbUserName, "--password=" + dbUserPassword, dbName,"-e", " source "+source};
         String[] executeCmd = new String[]{mysql ,dbName, "--user=" + dbUserName, "--password=" + dbUserPassword, "-e", " source " + source};
         Process runtimeProcess;
         try {

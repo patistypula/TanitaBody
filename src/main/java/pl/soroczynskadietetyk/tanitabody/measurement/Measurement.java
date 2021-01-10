@@ -42,5 +42,4 @@ public class Measurement {
 
     @ManyToOne
     private Person person;
-
 }

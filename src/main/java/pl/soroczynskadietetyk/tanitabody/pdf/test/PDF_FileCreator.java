@@ -15,8 +15,6 @@ public class PDF_FileCreator {
 
 
     public static ByteArrayInputStream createByteStream (PdfData pdfData){
-        //String adressFile = "src/main/java/pl/coderslab/tanitabody/pdf/test/test.pdf";
-
         PdfDocument pdf = new PdfDocument();
         pdf.addTitle("Tabela pomiarów");
         Document pdfDoc = new Document();
@@ -28,7 +26,6 @@ public class PDF_FileCreator {
             pdfDoc.setPageSize(PageSize.A4.rotate());
             pdfDoc.setMargins(20, 20, 10, 20);
             pdfDoc.newPage();
-            //pdfDoc.newPage();
             Font f1 = new Font(Font.FontFamily.COURIER, 8);
             BaseFont pl = BaseFont.createFont("c:/windows/fonts/arial.ttf",
                     BaseFont.CP1250, BaseFont.EMBEDDED);
@@ -58,7 +55,6 @@ public class PDF_FileCreator {
             Font f = new Font(Font.FontFamily.TIMES_ROMAN, 7);
             Font ff = new Font(pl, 6);
             //row1
-            //List<PdfPCell> row1 = new ArrayList<>();
             for (int i = 0; i < 13; i++) {
                 PdfPCell cell1 = new PdfPCell();
                 cell1.setVerticalAlignment(Element.ALIGN_MIDDLE);
@@ -72,11 +68,8 @@ public class PDF_FileCreator {
                 table.addCell(cell1);
             }
             //row2
-            //List<PdfPCell> row2 = new ArrayList<>();
             PdfPCell cell2 = new PdfPCell();
             cell2.setPhrase(new Phrase(""));
-            //table.addCell(cell2);
-            //PdfPCell cell3 = new PdfPCell();
             cell2.setRowspan(2);
             table.addCell(cell2);
             for (int i = 0; i < 12; i++) {
@@ -278,7 +271,6 @@ public class PDF_FileCreator {
                     "Wiek  metaboliczny \n" +
                     "PPM", ff));
             cellBMI.setVerticalAlignment(Element.ALIGN_MIDDLE);
-            //cellBMI.setHorizontalAlignment(Element.ALIGN_CENTER);
             table.addCell(cellBMI);
             for (int i = 0; i < 11; i++) {
                 PdfPCell cell = new PdfPCell();

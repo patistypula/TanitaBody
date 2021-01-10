@@ -25,6 +25,5 @@
         <button class="button1">Anuluj</button>
     </a>
 </center>
-
 </body>
 </html>
